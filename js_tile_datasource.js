@@ -9,20 +9,7 @@ async function run(context, timeframe, config, api) {
         }));
 
         /* Transform the Pingdom timeseries data to that required by a Heatmap */
-        return data.reduce((final, obj) => {
-            const check = obj.series[0];
-            const name = check.id.split(' Response Time ')[0];
-            const props = check.data.reduce((row, datum) => {
-                const options = timeframe.enum && timeframe.enum.includes('day') ?
-                    { day: 'numeric', month: 'short' } :
-                    { hour: 'numeric', minute: 'numeric'};
-                const key = new Date(datum.timestamp).toLocaleString('en-GB', options);
-                row[key] = datum.value;
-                return row;
-            }, {});
-            final.push( { name, ...props } );
-            return final;
-        }, []) || [{item: 'hello'}, {item: 'ben'}, {item: 'yep'}];
+        return [{item: 'hello'}, {item: 'ben'}, {item: 'yep'}];
     } catch (err) {
         console.error(err);
         throw err;
