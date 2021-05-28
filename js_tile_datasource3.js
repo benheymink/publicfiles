@@ -9,7 +9,7 @@ async function run(context, timeframe, config, api) {
         }));
 
         /* Transform the Pingdom timeseries data to that required by a Heatmap */
-        return [{item: 'hello'}, {item: 'ben'}, {item: 'yep'}];
+        return [{item: 'hello'}, {item: 'ben'}, {item: 'yep'},{item: 'hello'}, {item: 'ben'}, {item: 'yep'},{item: 'hello'}, {item: 'ben'}, {item: 'yep'},{item: 'hello'}, {item: 'ben'}, {item: 'yep'}];
     } catch (err) {
         console.error(err);
         throw err;
