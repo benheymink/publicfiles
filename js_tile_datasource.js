@@ -22,7 +22,7 @@ async function run(context, timeframe, config, api) {
             }, {});
             final.push( { name, ...props } );
             return final;
-        }, []);
+        }, []) || [];
     } catch (err) {
         console.error(err);
         throw err;
